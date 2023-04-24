@@ -1,0 +1,97 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta  charset="UTF-8">
+    <title>Home</title>
+    <style>
+        h1{
+            margin-top:70px;
+            margin-left:356px;
+            text-align:center;
+            font-size=60px;
+            background-color:rgb(0,0,0,0.6);
+            color:white; 
+            width:630px;
+            border-radius:15px 15px 0px 0px;
+        }
+        .option{
+            left:56px;
+            top:20px;
+            line-height:20px;
+            width:630px;
+            height:40px;
+            border-radius:8px;
+            font-size:20px;
+            color:white;
+            background-color:rgb(0,0,0,0.8);
+            font-family: 'Times New Roman', serif;
+        }
+        input[type=number]{
+            left:56px;
+            width:630px;
+            height:35px;
+            border-radius:9px;
+            font-size:20px;
+            color:white;
+            background-color:rgb(0,0,0,0.8);
+            font-family: 'Times New Roman', serif;
+        }
+        ::placeholder{
+            color:white;
+            opacity:2;
+        }
+        input[type=submit]{
+            background-color:black;
+            color:white;
+            cursor:pointer;
+            font-size:17px;
+            height:4vh;
+            width:12%;
+            padding 16px 32px;
+            font-family: 'Times New Roman', serif;   
+        }
+        body{
+            background-image:url("{%static 'Pic.png'%}");
+            background-size:cover;
+        }
+        .b{
+            margin-left:356px;
+            text-align:center;
+            font-size=60px;
+            background-color:rgb(0,0,0,0.6);
+            color:white; 
+            width:635px;
+            border-radius:0px 0px 15px 15px;
+        }
+    </style>    
+</head>
+<body style='text-align:center'>
+    <h1>MARATHON TIME PREDICTION</h1>
+    <form action='predict'>
+        <div class='main'>
+            <div>
+                <select class='option' name='n1' id='n1'>
+                <option disabled='disabled' selected='selected'>--Category--</option>
+                <option value='A30'>Above 30 years</option>
+                <option value='B30'>Below 30 years</option>
+                </select>
+            </div><br><br>
+            <div>
+                <input class='kilometer' type='number' name='n2' id='n2'
+                placeholder="Total kilometers run in last 4 weeks" size='50' step='.0001' min="15" max="140">
+            </div><br><br>
+            <div >
+                <input class='number' type='number' name='n3' id='n3'
+                placeholder="Average speed of the athlete in last 4 training weeks(km)" size='50' step='.0001' min="7" max="16">
+            </div><br><br>
+            <div >
+                <input class='tyme' type='number' name='n4' id ='n4'
+                placeholder="Running time of the first half marathon(hour)" size='50' step='.01' min='1.1' max='3'>
+            </div><br>
+        </div><br><br>   
+        <input type ="submit" value="PREDICT TIME">
+    </form>
+    <div class="b"><h2>------------------   </h2></div>
+</body>
+</html>
